@@ -1,0 +1,49 @@
+.genders,
+.brands,
+.fits {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #e9e9ed;
+  border-right: 1px solid #edebef;
+}
+.genders {
+  border-top: 1px solid #e9e9ed;
+}
+.filters,
+h3 {
+  letter-spacing: 0.3px;
+}
+.filters {
+  margin: 1rem 1rem;
+  font-size: 1rem;
+}
+h3 {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.fit,
+.gender,
+.brand {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.gender {
+  font-weight: 600;
+}
+.qty {
+  color: #535766;
+  font-size: 0.7rem;
+  margin-left: 5px;
+}
+.input__box {
+  height: 15px;
+  width: 15px;
+}
+label {
+  margin-top: 5px;
+}

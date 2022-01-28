@@ -1,0 +1,82 @@
+.list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #e9e9ed;
+}
+.list__options {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.list__option,
+.list__sorting {
+  font-weight: 400;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+.list__option:hover {
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+  border-radius: 20px;
+}
+option {
+  border: none;
+  background-color: #fff;
+}
+.list__sorting {
+  position: relative;
+}
+.sort__list {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  background-color: #fff;
+  padding: 0;
+  display: none;
+  z-index: 1000;
+}
+.selected__option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.sort__item {
+  padding: 0.5rem 3rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+.selected__sort {
+  cursor: pointer;
+  display: flex;
+  gap: 0.8rem;
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+}
+.selected__sort:hover + .sort__list {
+  display: block;
+  box-shadow: 0 2px 16px 4px rgb(40 44 63 / 10%);
+  border: 1px solid rgb(240, 238, 238);
+}
+.sort__list:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 16px 4px rgb(40 44 63 / 10%);
+}
+.sort__list:hover {
+  display: block;
+}
+@media only screen and (max-width: 550px) {
+  .list__options {
+    display: none;
+  }
+}

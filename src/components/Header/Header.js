@@ -1,16 +1,23 @@
 import React from "react";
-// import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 
-const Header = ({ searchTerm, setSearchTerm }) => {
+const Header = ({ searchTerm, setSearchTerm, openModal, setOpenModal }) => {
   return (
     <div className="header">
       <div className="logo__section">
-        <img
-          src="https://images.indianexpress.com/2021/01/myntra.png"
-          alt="myntra logo"
-          className="logo"
-        />
+        <Link to="/">
+          <img
+            src="https://images.indianexpress.com/2021/01/myntra.png"
+            alt="myntra logo"
+            className="logo"
+          />
+        </Link>
       </div>
       <div className="header__left">
         <ul className="categories">
@@ -23,7 +30,6 @@ const Header = ({ searchTerm, setSearchTerm }) => {
         </ul>
       </div>
       <div className="header__center">
-        {/* <SearchIcon /> */}
         <input
           type="text"
           placeholder="Search for products, brands and more"
@@ -36,9 +42,21 @@ const Header = ({ searchTerm, setSearchTerm }) => {
       </div>
       <div className="header__right">
         <ul className="user__details">
-          <li className="user__detail">Profile</li>
-          <li className="user__detail">Wishlist</li>
-          <li className="user__detail">Bag</li>
+          <li className="user__detail">
+            <FontAwesomeIcon icon={faUser} /> <span>Profile</span>
+          </li>
+          <li className="user__detail">
+            <FontAwesomeIcon icon={faHeart} /> <span>Wishlist</span>
+          </li>
+          <li
+            className="user__detail"
+            onClick={() => {
+              setOpenModal(!openModal);
+            }}
+          >
+            <FontAwesomeIcon icon={faShoppingBag} />
+            <span>Bag</span>
+          </li>
         </ul>
       </div>
     </div>
